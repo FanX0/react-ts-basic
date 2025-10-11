@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { listDestinations, createDestination, updateDestination, deleteDestination } from "../../../services/api.axios";
-import type { Destination } from "../../../types/destination";
+import { listDestinations, createDestination, updateDestination, deleteDestination } from "../../../../services/api.axios";
+import type { Destination } from "../../../../types/destination";
 
 const CrudServerAxios = () => {
   const [items, setItems] = useState<Destination[]>([]);

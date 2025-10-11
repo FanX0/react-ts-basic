@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useDestinationsCrud } from "../../../hooks/useDestinationsCrud";
-import { type DestinationInput } from "../../../schemas/destination";
+import { useDestinationsCrud } from "../../../../hooks/useDestinationsCrud";
+import { type DestinationInput } from "../../../../schemas/destination";
 
 const RhfEasyFetch = () => {
   const { items, loading, error, create, refresh } = useDestinationsCrud();

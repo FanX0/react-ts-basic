@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useAxios } from "../../../hooks/useAxios";
+import { useAxios } from "../../../../hooks/useAxios";
 
 type Data = {
   destinations: { name: string; description: string }[];

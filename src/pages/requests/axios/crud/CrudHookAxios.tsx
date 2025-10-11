@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDestinationsCrudAxios } from "../../../hooks/useDestinationsCrudAxios";
+import { useDestinationsCrudAxios } from "../../../../hooks/useDestinationsCrudAxios";
 
 const CrudHookAxios = () => {
   const { items, loading, error, refresh, create, update, remove } = useDestinationsCrudAxios();

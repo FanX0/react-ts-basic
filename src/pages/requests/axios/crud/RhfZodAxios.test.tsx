@@ -9,7 +9,7 @@ const items = [
 const refreshSpy = vi.fn();
 const createSpy = vi.fn();
 
-vi.mock('../../../hooks/useDestinationsCrudAxios', () => ({
+vi.mock('../../../../hooks/useDestinationsCrudAxios', () => ({
   useDestinationsCrudAxios: () => ({
     items,
     loading: false,
