@@ -6,7 +6,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   // Set base for GitHub Pages deployment under repo name
-  base: "/react.ts-basic/",
+  base: "/react-ts-basic/",
   test: {
     environment: "jsdom",
     setupFiles: ["./src/test/setup.ts"],
