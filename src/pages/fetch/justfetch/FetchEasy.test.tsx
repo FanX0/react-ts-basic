@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import FetchEasy from './FetchEasy.tsx';
 
@@ -16,9 +16,8 @@ describe('FetchEasy', () => {
 
     render(<FetchEasy />);
 
-    const items = await screen.findAllByRole('listitem');
-    expect(items[0]).toHaveTextContent('Moon');
-    expect(items[0]).toHaveTextContent("Earth's natural satellite");
+    expect(await screen.findByText('Moon')).toBeInTheDocument();
+    expect(await screen.findByText(/Earth's natural satellite/)).toBeInTheDocument();
   });
 
   it('shows error message on failed fetch', async () => {

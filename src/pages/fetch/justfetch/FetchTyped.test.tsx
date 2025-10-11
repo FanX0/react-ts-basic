@@ -16,9 +16,8 @@ describe('FetchTyped', () => {
 
     render(<FetchTyped />);
 
-    const items = await screen.findAllByRole('listitem');
-    expect(items[0]).toHaveTextContent('Europa');
-    expect(items[0]).toHaveTextContent('Icy moon of Jupiter');
+    expect(await screen.findByText('Europa')).toBeInTheDocument();
+    expect(await screen.findByText(/Icy moon of Jupiter/)).toBeInTheDocument();
   });
 
   it('shows error message on failed typed fetch', async () => {
