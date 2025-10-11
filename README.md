@@ -6,7 +6,7 @@ Beginner-friendly React + Vite project focused on learning core concepts with Ty
 - Requirements: `Node 18+`, `npm`
 - Install dependencies: `npm install`
 - Start dev server: `npm run dev`
-  - App runs at `http://localhost:5173/` (or your chosen port). For GitHub Pages, the base path is `react.ts-basic`.
+  - App runs at `http://localhost:5173/` (or your chosen port). For GitHub Pages, the base path is `react-ts-basic`.
 - Build for production: `npm run build`
 - Preview build locally: `npm run preview`
 
@@ -55,7 +55,7 @@ src/
 
 ## Routing & Base Path
 - Uses `react-router` for pages under `src/pages`.
-- When deploying to GitHub Pages, the base is configured in `vite.config.js` as `base: '/react.ts-basic/'`.
+- When deploying to GitHub Pages, the base is configured in `vite.config.js` as `base: '/react-ts-basic/'`.
 
 ## Contributing & Commit Style
 - Use feature-scoped commits to keep history clean:
