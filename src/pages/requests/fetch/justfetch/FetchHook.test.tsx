@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import FetchHook from './FetchHook.tsx';
 
@@ -9,7 +10,7 @@ describe('FetchHook', () => {
 
   it('renders items and allows refetch', async () => {
     const mockData = { destinations: [{ name: 'Titan', description: 'Largest moon of Saturn' }] };
-    const fetchSpy = vi.spyOn(global, 'fetch').mockResolvedValue({
+    const fetchSpy = vi.spyOn(globalThis, 'fetch').mockResolvedValue({
       ok: true,
       json: async () => mockData,
     } as unknown as Response);

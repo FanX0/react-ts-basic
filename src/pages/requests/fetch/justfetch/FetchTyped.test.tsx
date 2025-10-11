@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import FetchTyped from './FetchTyped.tsx';
 
@@ -9,7 +10,7 @@ describe('FetchTyped', () => {
 
   it('renders items after successful typed fetch', async () => {
     const mockData = { destinations: [{ name: 'Europa', description: 'Icy moon of Jupiter' }] };
-    vi.spyOn(global, 'fetch').mockResolvedValue({
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue({
       ok: true,
       json: async () => mockData,
     } as unknown as Response);
@@ -21,7 +22,7 @@ describe('FetchTyped', () => {
   });
 
   it('shows error message on failed typed fetch', async () => {
-    vi.spyOn(global, 'fetch').mockResolvedValue({
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue({
       ok: false,
       status: 404,
       json: async () => ({}),
