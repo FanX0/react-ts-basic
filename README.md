@@ -1,16 +1,79 @@
-# React + Vite
+# React TS Basic
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Beginner-friendly React + Vite project focused on learning core concepts with TypeScript: components, props, lists/keys, effects, data fetching with `fetch` and `axios`, and CRUD patterns using hooks and React Hook Form.
 
-Currently, two official plugins are available:
+## Quick Start
+- Requirements: `Node 18+`, `npm`
+- Install dependencies: `npm install`
+- Start dev server: `npm run dev`
+  - App runs at `http://localhost:5173/` (or your chosen port). For GitHub Pages, the base path is `react.ts-basic`.
+- Build for production: `npm run build`
+- Preview build locally: `npm run preview`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Learning Map
+- Basics (UI + Layout)
+  - `src/modules/basic/layout/AppBasicLayout.tsx` — simple page layout
+  - `src/modules/basic/ui/{Section.tsx, Card.tsx, Button.tsx}` — basic UI blocks
+  - Import via barrels: `src/modules/basic/{layout|ui}/index.ts`
+- Props Lessons
+  - `src/pages/basic/easy/props/*` — intro, destructuring, spread, children, conditional
+- Requests (Data Fetching)
+  - `src/pages/requests/fetch/*` — fetch basics, typed fetch, hooks, CRUD
+  - `src/pages/requests/axios/*` — axios basics, typed axios, hooks, CRUD
 
-## React Compiler
+## Project Structure
+```
+src/
+  components/          # global primitives (accordion, tabs, disclosure, header)
+  modules/basic/       # feature module (layout + UI) with barrels
+  pages/               # route pages (basic lessons, requests examples)
+  hooks/               # reusable data hooks (fetch, axios, CRUD)
+  services/            # API services (axios + JSON Server)
+  schemas/             # zod schemas and types
+  test/                # test setup for Vitest
+```
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Key Concepts (Beginner)
+- Props are inputs to components (read-only) — pass values and callbacks, render with `children`.
+- Lists & keys — always use a stable `key` when rendering arrays.
+- Effects — handle side-effects like data fetching in `useEffect`.
+- Fetching data — use `fetch` or `axios`, and extract logic into hooks.
+- CRUD — Render lists, create/update/delete, manage loading/error state.
 
-## Expanding the ESLint configuration
+## Scripts
+- `npm run dev` — start dev server
+- `npm run build` — build for production
+- `npm run preview` — preview build
+- `npm test` — run tests once
+- `npm run test:watch` — run tests in watch mode
+- `npm run lint` — run ESLint
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Testing
+- Vitest + Testing Library with `jsdom` environment.
+- Config: `vite.config.js` (`test.environment`, `test.setupFiles`), setup in `src/test/setup.ts`.
+- Guide: see `docs/TESTING.md`.
+
+## Routing & Base Path
+- Uses `react-router` for pages under `src/pages`.
+- When deploying to GitHub Pages, the base is configured in `vite.config.js` as `base: '/react.ts-basic/'`.
+
+## Contributing & Commit Style
+- Use feature-scoped commits to keep history clean:
+  - `basic: add module README (layout, ui, barrels)`
+  - `props: add lessons README`
+  - `requests: add CRUD examples with hooks`
+- Prefer branches per feature: `feature/<name>` then PR.
+
+## Useful Docs
+- `src/modules/basic/README.md` — layout/UI props and usage
+- `src/pages/basic/easy/props/README.md` — props lessons
+- `src/pages/requests/README.md` — fetch/axios & CRUD overview
+- `docs/TESTING.md` — testing setup and examples
+
+## Tech Stack
+- `react` + `vite` + `@vitejs/plugin-react`
+- `react-router`
+- `vitest` + `@testing-library/react`
+- `tailwindcss`
+- `react-hook-form` + `zod`
+- `axios`
