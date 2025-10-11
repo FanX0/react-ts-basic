@@ -5,18 +5,24 @@ import "./index.css";
 import App from "./App.jsx";
 import Tabs from "./components/tabs/Tabs.jsx";
 import BasicIndex from "./pages/basic/BasicIndex.tsx";
-import StateBasics from "./pages/basic/StateBasics.tsx";
-import PropsBasics from "./pages/basic/PropsBasics.tsx";
-import EffectsBasics from "./pages/basic/EffectsBasics.tsx";
-import ConditionalBasics from "./pages/basic/ConditionalBasics.tsx";
-import ListKeysBasics from "./pages/basic/ListKeysBasics.tsx";
-import FormBasics from "./pages/basic/FormBasics.tsx";
-import ContextIntermediate from "./pages/basic/ContextIntermediate.tsx";
-import ReducerIntermediate from "./pages/basic/ReducerIntermediate.tsx";
-import MemoizationIntermediate from "./pages/basic/MemoizationIntermediate.tsx";
-import CustomHooksIntermediate from "./pages/basic/CustomHooksIntermediate.tsx";
-import PerformancePro from "./pages/basic/PerformancePro.tsx";
-import PatternsPro from "./pages/basic/PatternsPro.tsx";
+import ComponentEasy from "./pages/basic/easy/ComponentEasy.tsx";
+import StateEasy from "./pages/basic/easy/StateEasy.tsx";
+import PropsEasyIndex from "./pages/basic/easy/props/PropsEasyIndex.tsx";
+import PropsEasy from "./pages/basic/easy/props/PropsEasy.tsx";
+import PropsDestructuring from "./pages/basic/easy/props/PropsDestructuring.tsx";
+import PropsSpreadSyntax from "./pages/basic/easy/props/PropsSpreadSyntax.tsx";
+import PropsChildren from "./pages/basic/easy/props/PropsChildren.tsx";
+import PropsConditional from "./pages/basic/easy/props/PropsConditional.tsx";
+import EffectsEasy from "./pages/basic/easy/EffectsEasy.tsx";
+import ConditionalEasy from "./pages/basic/easy/ConditionalEasy.tsx";
+import ListKeysEasy from "./pages/basic/easy/ListKeysEasy.tsx";
+import FormEasy from "./pages/basic/easy/FormEasy.tsx";
+import ContextIntermediate from "./pages/basic/intermediate/ContextIntermediate.tsx";
+import ReducerIntermediate from "./pages/basic/intermediate/ReducerIntermediate.tsx";
+import MemoizationIntermediate from "./pages/basic/intermediate/MemoizationIntermediate.tsx";
+import CustomHooksIntermediate from "./pages/basic/intermediate/CustomHooksIntermediate.tsx";
+import PerformancePro from "./pages/basic/pro/PerformancePro.tsx";
+import PatternsPro from "./pages/basic/pro/PatternsPro.tsx";
 import FetchEasy from "./pages/requests/fetch/justfetch/FetchEasy.tsx";
 import FetchTyped from "./pages/requests/fetch/justfetch/FetchTyped.tsx";
 import FetchHook from "./pages/requests/fetch/justfetch/FetchHook.tsx";
@@ -44,12 +50,18 @@ createRoot(document.getElementById("root")).render(
         <Route path="/" element={<App />} />
         <Route path="/product" element={<Tabs />} />
         <Route path="/basic" element={<BasicIndex />} />
-        <Route path="/basic/state" element={<StateBasics />} />
-        <Route path="/basic/props" element={<PropsBasics />} />
-        <Route path="/basic/effects" element={<EffectsBasics />} />
-        <Route path="/basic/conditional" element={<ConditionalBasics />} />
-        <Route path="/basic/list-keys" element={<ListKeysBasics />} />
-        <Route path="/basic/forms" element={<FormBasics />} />
+        <Route path="/basic/component" element={<ComponentEasy />} />
+        <Route path="/basic/state" element={<StateEasy />} />
+        <Route path="/basic/props" element={<PropsEasyIndex />} />
+        <Route path="/basic/props/basic" element={<PropsEasy />} />
+        <Route path="/basic/props/destructuring" element={<PropsDestructuring />} />
+        <Route path="/basic/props/spread" element={<PropsSpreadSyntax />} />
+        <Route path="/basic/props/children" element={<PropsChildren />} />
+        <Route path="/basic/props/conditional" element={<PropsConditional />} />
+        <Route path="/basic/effects" element={<EffectsEasy />} />
+        <Route path="/basic/conditional" element={<ConditionalEasy />} />
+        <Route path="/basic/list-keys" element={<ListKeysEasy />} />
+        <Route path="/basic/forms" element={<FormEasy />} />
         <Route path="/basic/context" element={<ContextIntermediate />} />
         <Route path="/basic/reducer" element={<ReducerIntermediate />} />
         <Route path="/basic/memoization" element={<MemoizationIntermediate />} />
