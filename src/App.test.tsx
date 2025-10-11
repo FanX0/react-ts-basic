@@ -8,7 +8,7 @@ describe('App navigation', () => {
     vi.restoreAllMocks();
   });
   it('renders key navigation links', () => {
-    vi.spyOn(global, 'fetch').mockResolvedValue({
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue({
       ok: true,
       json: async () => [],
     } as unknown as Response);

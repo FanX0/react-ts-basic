@@ -7,6 +7,16 @@ import Tabs from "./components/tabs/Tabs.jsx";
 import BasicIndex from "./pages/basic/BasicIndex.tsx";
 import StateBasics from "./pages/basic/StateBasics.tsx";
 import PropsBasics from "./pages/basic/PropsBasics.tsx";
+import EffectsBasics from "./pages/basic/EffectsBasics.tsx";
+import ConditionalBasics from "./pages/basic/ConditionalBasics.tsx";
+import ListKeysBasics from "./pages/basic/ListKeysBasics.tsx";
+import FormBasics from "./pages/basic/FormBasics.tsx";
+import ContextIntermediate from "./pages/basic/ContextIntermediate.tsx";
+import ReducerIntermediate from "./pages/basic/ReducerIntermediate.tsx";
+import MemoizationIntermediate from "./pages/basic/MemoizationIntermediate.tsx";
+import CustomHooksIntermediate from "./pages/basic/CustomHooksIntermediate.tsx";
+import PerformancePro from "./pages/basic/PerformancePro.tsx";
+import PatternsPro from "./pages/basic/PatternsPro.tsx";
 import FetchEasy from "./pages/requests/fetch/justfetch/FetchEasy.tsx";
 import FetchTyped from "./pages/requests/fetch/justfetch/FetchTyped.tsx";
 import FetchHook from "./pages/requests/fetch/justfetch/FetchHook.tsx";
@@ -36,6 +46,16 @@ createRoot(document.getElementById("root")).render(
         <Route path="/basic" element={<BasicIndex />} />
         <Route path="/basic/state" element={<StateBasics />} />
         <Route path="/basic/props" element={<PropsBasics />} />
+        <Route path="/basic/effects" element={<EffectsBasics />} />
+        <Route path="/basic/conditional" element={<ConditionalBasics />} />
+        <Route path="/basic/list-keys" element={<ListKeysBasics />} />
+        <Route path="/basic/forms" element={<FormBasics />} />
+        <Route path="/basic/context" element={<ContextIntermediate />} />
+        <Route path="/basic/reducer" element={<ReducerIntermediate />} />
+        <Route path="/basic/memoization" element={<MemoizationIntermediate />} />
+        <Route path="/basic/custom-hooks" element={<CustomHooksIntermediate />} />
+        <Route path="/basic/performance" element={<PerformancePro />} />
+        <Route path="/basic/patterns" element={<PatternsPro />} />
         <Route path="/fetch-basic" element={<FetchEasy />} />
         <Route path="/fetch-typed" element={<FetchTyped />} />
         <Route path="/fetch-hook" element={<FetchHook />} />

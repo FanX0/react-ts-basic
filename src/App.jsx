@@ -10,6 +10,10 @@ function App() {
       <nav style={{ display: "grid", gap: "0.5rem", padding: "1rem" }}>
        
         <hr />
+        <Link to="/basic">Basic Index</Link>
+        <Link to="/basic/state">Basic Typed</Link>
+        <Link to="/basic/props">Basic Hook</Link>
+        <hr/>
          <Link to="/fetch-basic">Fetch Easy</Link>
         <Link to="/fetch-typed">Fetch Typed</Link>
         <Link to="/fetch-hook">Fetch Hook</Link>
