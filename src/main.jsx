@@ -4,6 +4,9 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import "./index.css";
 import App from "./App.jsx";
 import Tabs from "./components/tabs/Tabs.jsx";
+import BasicIndex from "./pages/basic/BasicIndex.tsx";
+import StateBasics from "./pages/basic/StateBasics.tsx";
+import PropsBasics from "./pages/basic/PropsBasics.tsx";
 import FetchEasy from "./pages/requests/fetch/justfetch/FetchEasy.tsx";
 import FetchTyped from "./pages/requests/fetch/justfetch/FetchTyped.tsx";
 import FetchHook from "./pages/requests/fetch/justfetch/FetchHook.tsx";
@@ -30,6 +33,9 @@ createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/product" element={<Tabs />} />
+        <Route path="/basic" element={<BasicIndex />} />
+        <Route path="/basic/state" element={<StateBasics />} />
+        <Route path="/basic/props" element={<PropsBasics />} />
         <Route path="/fetch-basic" element={<FetchEasy />} />
         <Route path="/fetch-typed" element={<FetchTyped />} />
         <Route path="/fetch-hook" element={<FetchHook />} />
