@@ -1,8 +1,4 @@
-export type Destination = {
-  id: number;
-  name: string;
-  description: string;
-};
+import type { Destination } from "../types/destination";
 
 const BASE_URL = "http://localhost:3000";
 const headers = { "Content-Type": "application/json" };

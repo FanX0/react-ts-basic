@@ -6,7 +6,7 @@ type Data = {
 };
 
 const FetchHook = () => {
-  const { data, loading, error, refetch } = useFetch<Data>("/data.json");
+  const { data, loading, error, refetch } = useFetch<Data>("data.json");
   const items = useMemo(() => data?.destinations ?? [], [data]);
 
   return (

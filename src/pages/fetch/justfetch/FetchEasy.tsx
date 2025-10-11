@@ -13,7 +13,7 @@ const FetchEasy = () => {
       try {
         setLoading(true);
         setError(null);
-        const res = await fetch("/data.json");
+    const res = await fetch("data.json");
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const json: Data = await res.json();
         setItems(json.destinations);
@@ -30,7 +30,7 @@ const FetchEasy = () => {
   return (
     <div style={{ padding: "1rem" }}>
       <h2>Fetch Easy</h2>
-      <p style={{ color: "#666" }}>Fetching local file: <code>/data.json</code></p>
+      <p style={{ color: "#666" }}>Fetching local file: <code>data.json</code></p>
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: "red" }}>Error: {error}</p>}
       {!loading && !error && (

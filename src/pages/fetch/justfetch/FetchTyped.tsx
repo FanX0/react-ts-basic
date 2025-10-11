@@ -14,7 +14,7 @@ const FetchTyped = () => {
       try {
         setLoading(true);
         setError(null);
-        const res = await fetch("/data.json", { signal: controller.signal });
+        const res = await fetch("data.json", { signal: controller.signal });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const json: Data = await res.json();
         setDestinations(json.destinations);

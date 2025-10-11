@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
-import {
-  listDestinations,
-  createDestination,
-  updateDestination,
-  deleteDestination,
-  type Destination,
-} from "../../../services/api";
+import { listDestinations, createDestination, updateDestination, deleteDestination } from "../../../services/api";
+import type { Destination } from "../../../types/destination";
 
 const CrudServer = () => {
   const [items, setItems] = useState<Destination[]>([]);
