@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
+import AppBasicLayout from '../../modules/basic/layout/AppBasicLayout';
+import Section from '../../modules/basic/ui/Section';
 
 export default function BasicIndex() {
   useEffect(() => {
@@ -7,33 +9,36 @@ export default function BasicIndex() {
   }, []);
 
   return (
-    <div style={{ padding: 16 }}>
-      <h1>React Basics</h1>
+    <AppBasicLayout title="React Basics">
       <p>Learn core React concepts with examples from easy to pro.</p>
 
-      <h3>Easy</h3>
-      <ul>
-        <li><Link to="/basic/state">State Basics</Link></li>
-        <li><Link to="/basic/props">Props Basics</Link></li>
-        <li><Link to="/basic/effects">Effects Basics</Link></li>
-        <li><Link to="/basic/conditional">Conditional Rendering Basics</Link></li>
-        <li><Link to="/basic/list-keys">List & Keys Basics</Link></li>
-        <li><Link to="/basic/forms">Form Basics</Link></li>
-      </ul>
+      <Section title="Easy">
+        <ul>
+          <li><Link to="/basic/component">Component Basics</Link></li>
+          <li><Link to="/basic/state">State Basics</Link></li>
+          <li><Link to="/basic/props">Props Basics</Link></li>
+          <li><Link to="/basic/effects">Effects Basics</Link></li>
+          <li><Link to="/basic/conditional">Conditional Rendering Basics</Link></li>
+          <li><Link to="/basic/list-keys">List & Keys Basics</Link></li>
+          <li><Link to="/basic/forms">Form Basics</Link></li>
+        </ul>
+      </Section>
 
-      <h3>Intermediate</h3>
-      <ul>
-        <li><Link to="/basic/context">Context Intermediate</Link></li>
-        <li><Link to="/basic/reducer">Reducer Intermediate</Link></li>
-        <li><Link to="/basic/memoization">Memoization Intermediate</Link></li>
-        <li><Link to="/basic/custom-hooks">Custom Hooks Intermediate</Link></li>
-      </ul>
+      <Section title="Intermediate">
+        <ul>
+          <li><Link to="/basic/context">Context Intermediate</Link></li>
+          <li><Link to="/basic/reducer">Reducer Intermediate</Link></li>
+          <li><Link to="/basic/memoization">Memoization Intermediate</Link></li>
+          <li><Link to="/basic/custom-hooks">Custom Hooks Intermediate</Link></li>
+        </ul>
+      </Section>
 
-      <h3>Pro</h3>
-      <ul>
-        <li><Link to="/basic/performance">Performance Pro</Link></li>
-        <li><Link to="/basic/patterns">Patterns Pro</Link></li>
-      </ul>
-    </div>
+      <Section title="Pro">
+        <ul>
+          <li><Link to="/basic/performance">Performance Pro</Link></li>
+          <li><Link to="/basic/patterns">Patterns Pro</Link></li>
+        </ul>
+      </Section>
+    </AppBasicLayout>
   );
 }

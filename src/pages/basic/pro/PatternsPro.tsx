@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 
 type FetchProps<T> = {
   url: string;
-  render: (state: { data: T | null; loading: boolean; error: string | null }) => JSX.Element;
+  render: (state: { data: T | null; loading: boolean; error: string | null }) => ReactNode;
 };
 
 function DataFetcher<T>({ url, render }: FetchProps<T>) {
