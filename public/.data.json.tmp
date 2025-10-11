@@ -1,0 +1,42 @@
+{
+  "destinations": [
+    {
+      "name": "Moon",
+      "description": "Earth's natural satellite"
+    },
+    {
+      "name": "Mars",
+      "description": "The red planet"
+    },
+    {
+      "id": "af81",
+      "name": "aku",
+      "description": ""
+    },
+    {
+      "id": "7695",
+      "name": "aku",
+      "description": "aa"
+    },
+    {
+      "id": "6a00",
+      "name": "s",
+      "description": ""
+    },
+    {
+      "id": "56a2",
+      "name": "a",
+      "description": "a"
+    },
+    {
+      "id": "df12",
+      "name": "ase",
+      "description": "s"
+    },
+    {
+      "id": "ec95",
+      "name": "abcs",
+      "description": "aa"
+    }
+  ]
+}

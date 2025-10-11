@@ -1,0 +1,6 @@
+{
+  "destinations": [
+    { "name": "Moon", "description": "Earth's natural satellite" },
+    { "name": "Mars", "description": "The red planet" }
+  ]
+}
