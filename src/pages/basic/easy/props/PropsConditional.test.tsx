@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import PropsConditional from './PropsConditional.tsx';
+import PropsConditional from '@/pages/basic/easy/props/PropsConditional';
 
 describe('PropsConditional', () => {
   it('toggles conditional sections and renders logical AND content', () => {

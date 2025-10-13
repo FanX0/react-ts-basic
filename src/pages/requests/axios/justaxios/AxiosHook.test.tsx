@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import AxiosHook from './AxiosHook.tsx';
+import AxiosHook from '@/pages/requests/axios/justaxios/AxiosHook';
 
-vi.mock('../../../../hooks/useAxios', () => {
+vi.mock('@/hooks/useAxios', () => {
   return {
     useAxios: () => ({
       data: { destinations: [{ name: 'Mercury', description: 'Closest planet to the Sun' }] },

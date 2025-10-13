@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import CrudBasic from './CrudBasic.tsx';
+import CrudBasic from './CrudBasic';
 
 describe('CrudBasic (client-only)', () => {
   it('renders initial items and supports create, edit, delete', async () => {

@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
-import RhfTypedFetch from './RhfTypedFetch.tsx';
+import RhfTypedFetch from './RhfTypedFetch';
 
 const items = [
   { id: 1, name: 'Moon', description: "Earth's natural satellite" },
@@ -11,7 +11,7 @@ const createSpy = vi.fn();
 const updateSpy = vi.fn();
 const removeSpy = vi.fn();
 
-vi.mock('../../../../hooks/useDestinationsCrud', () => ({
+vi.mock('@/hooks/useDestinationsCrud', () => ({
   useDestinationsCrud: () => ({
     items,
     loading: false,

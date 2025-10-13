@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
-import CrudHookAxios from './CrudHookAxios.tsx';
+import CrudHookAxios from '@/pages/requests/axios/crud/CrudHookAxios';
 
 const items = [
   { id: 1, name: 'Moon', description: "Earth's natural satellite" },
@@ -11,7 +11,7 @@ const createSpy = vi.fn();
 const updateSpy = vi.fn();
 const removeSpy = vi.fn();
 
-vi.mock('../../../../hooks/useDestinationsCrudAxios', () => ({
+vi.mock('@/hooks/useDestinationsCrudAxios', () => ({
   useDestinationsCrudAxios: () => ({
     items,
     loading: false,

@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import FormEasy from './FormEasy.tsx';
+import FormEasy from '@/pages/basic/easy/FormEasy';
 
 describe('FormEasy', () => {
   it('enables submit when inputs valid and shows submitted', () => {
