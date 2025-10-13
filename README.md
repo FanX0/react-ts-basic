@@ -3,10 +3,10 @@
 Beginner-friendly React + Vite project focused on learning core concepts with TypeScript: components, props, lists/keys, effects, data fetching with `fetch` and `axios`, and CRUD patterns using hooks and React Hook Form.
 
 ## Quick Start
-- Requirements: `Node 18+`, `npm`
+- Requirements: `Node 20.19+` (recommend `Node 22`), `npm`
 - Install dependencies: `npm install`
 - Start dev server: `npm run dev`
-  - App runs at `http://localhost:5173/` (or your chosen port). For GitHub Pages, the base path is `react-ts-basic`.
+  - App runs at `http://localhost:5173/` (or your chosen port). For GitHub Pages, the base path is `/react-ts-basic/`.
 - Build for production: `npm run build`
 - Preview build locally: `npm run preview`
 
@@ -58,6 +58,7 @@ src/
 ## Path Alias
 - Configured in `tsconfig.json` and `vite.config.js`:
   - `@/*` → `src/*`
+  - Vite resolves `@` via `fileURLToPath(new URL('./src', import.meta.url))` for cross-platform builds
 - Use `@` imports without `.ts/.tsx` extensions, e.g. `import { Section } from '@/modules/basic/ui'`.
 
 ## Routing & Base Path
@@ -73,6 +74,7 @@ src/
   - Enable CRUD: set `VITE_USE_STATIC_DATA=false` and provide `VITE_API_BASE_URL` to a live API
 - Axios client base URL comes from `src/services/http.ts` (`VITE_API_BASE_URL`).
 - Ensure CORS is allowed from your site origin when using a remote API.
+- CI builds use Node `22` (see `.github/workflows/deploy.yml`).
 
 ## CRUD Modes
 - Static demo (read-only): lists from `data.json`, mutations disabled.
