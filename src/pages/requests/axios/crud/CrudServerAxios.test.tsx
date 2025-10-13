@@ -2,7 +2,7 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import CrudServerAxios from './CrudServerAxios.tsx';
 
-vi.mock('../../../services/api.axios', () => {
+vi.mock('../../../../services/api.axios', () => {
   return {
     listDestinations: vi.fn().mockResolvedValue([
       { id: 1, name: 'Moon', description: "Earth's natural satellite" },
@@ -16,7 +16,7 @@ vi.mock('../../../services/api.axios', () => {
 
 describe('CrudServerAxios (Axios + JSON Server)', () => {
   it('loads items and supports create/update/delete via axios service calls', async () => {
-    const api = await import('../../../services/api.axios');
+      const api = await import('../../../../services/api.axios');
 
     render(<CrudServerAxios />);
 

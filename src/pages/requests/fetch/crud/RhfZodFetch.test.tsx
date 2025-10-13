@@ -9,7 +9,7 @@ const items = [
 const refreshSpy = vi.fn();
 const createSpy = vi.fn();
 
-vi.mock('../../../hooks/useDestinationsCrud', () => ({
+vi.mock('../../../../hooks/useDestinationsCrud', () => ({
   useDestinationsCrud: () => ({
     items,
     loading: false,
@@ -21,7 +21,6 @@ vi.mock('../../../hooks/useDestinationsCrud', () => ({
 
 describe('RhfZodFetch', () => {
   it('renders items and submits create via hook with zod resolver', async () => {
-    const hook = { refresh: refreshSpy, create: createSpy };
 
     render(<RhfZodFetch />);
 
@@ -32,9 +31,9 @@ describe('RhfZodFetch', () => {
     fireEvent.change(screen.getByPlaceholderText('Name'), { target: { value: 'Europa' } });
     fireEvent.change(screen.getByPlaceholderText('Description'), { target: { value: 'Icy moon of Jupiter' } });
     fireEvent.click(screen.getByText('Create'));
-    await waitFor(() => expect(hook.create).toHaveBeenCalledWith({ name: 'Europa', description: 'Icy moon of Jupiter' }));
+    await waitFor(() => expect(createSpy).toHaveBeenCalledWith({ name: 'Europa', description: 'Icy moon of Jupiter' }));
 
     fireEvent.click(screen.getByText('Refresh'));
-    expect(hook.refresh).toHaveBeenCalled();
+    expect(refreshSpy).toHaveBeenCalled();
   });
 });

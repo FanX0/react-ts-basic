@@ -2,7 +2,7 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import CrudServer from './CrudServer.tsx';
 
-vi.mock('../../../services/api', () => {
+vi.mock('../../../../services/api', () => {
   return {
     listDestinations: vi.fn().mockResolvedValue([
       { id: 1, name: 'Moon', description: "Earth's natural satellite" },
@@ -16,7 +16,7 @@ vi.mock('../../../services/api', () => {
 
 describe('CrudServer (Fetch + JSON Server)', () => {
   it('loads items and supports create/update/delete via service calls', async () => {
-    const api = await import('../../../services/api');
+      const api = await import('../../../../services/api');
 
     render(<CrudServer />);
 

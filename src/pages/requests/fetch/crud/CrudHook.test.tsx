@@ -11,7 +11,7 @@ const createSpy = vi.fn();
 const updateSpy = vi.fn();
 const removeSpy = vi.fn();
 
-vi.mock('../../../hooks/useDestinationsCrud', () => ({
+vi.mock('../../../../hooks/useDestinationsCrud', () => ({
   useDestinationsCrud: () => ({
     items,
     loading: false,
@@ -25,7 +25,6 @@ vi.mock('../../../hooks/useDestinationsCrud', () => ({
 
 describe('CrudHook (Fetch)', () => {
   it('renders items and triggers hook actions via UI', async () => {
-    const hook = { refresh: refreshSpy, create: createSpy, update: updateSpy, remove: removeSpy };
 
     render(<CrudHook />);
 
@@ -37,20 +36,20 @@ describe('CrudHook (Fetch)', () => {
     fireEvent.change(screen.getByPlaceholderText('Name'), { target: { value: 'Europa' } });
     fireEvent.change(screen.getByPlaceholderText('Description'), { target: { value: 'Icy moon of Jupiter' } });
     fireEvent.click(screen.getByText('Create'));
-    expect(hook.create).toHaveBeenCalledWith({ name: 'Europa', description: 'Icy moon of Jupiter' });
+    expect(createSpy).toHaveBeenCalledWith({ name: 'Europa', description: 'Icy moon of Jupiter' });
 
     // Edit and Update
     fireEvent.click(screen.getAllByText('Edit')[0]);
     fireEvent.change(screen.getByPlaceholderText('Description'), { target: { value: 'Edited' } });
     fireEvent.click(screen.getByText('Update'));
-    expect(hook.update).toHaveBeenCalled();
+    expect(updateSpy).toHaveBeenCalled();
 
     // Delete
     fireEvent.click(screen.getAllByText('Delete')[1]);
-    expect(hook.remove).toHaveBeenCalledWith(2);
+    expect(removeSpy).toHaveBeenCalledWith(2);
 
     // Refresh
     fireEvent.click(screen.getByText('Refresh'));
-    expect(hook.refresh).toHaveBeenCalled();
+    expect(refreshSpy).toHaveBeenCalled();
   });
 });

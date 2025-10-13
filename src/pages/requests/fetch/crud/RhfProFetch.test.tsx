@@ -11,7 +11,7 @@ const createSpy = vi.fn();
 const updateSpy = vi.fn();
 const removeSpy = vi.fn();
 
-vi.mock('../../../hooks/useDestinationsCrud', () => ({
+vi.mock('../../../../hooks/useDestinationsCrud', () => ({
   useDestinationsCrud: () => ({
     items,
     loading: false,

@@ -25,7 +25,6 @@ vi.mock('../../../../hooks/useDestinationsCrudAxios', () => ({
 
 describe('CrudHookAxios (Axios Hook)', () => {
   it('renders items and triggers hook actions via UI', async () => {
-    const hook = { refresh: refreshSpy, create: createSpy, update: updateSpy, remove: removeSpy };
 
     render(<CrudHookAxios />);
 
@@ -37,20 +36,20 @@ describe('CrudHookAxios (Axios Hook)', () => {
     fireEvent.change(screen.getByPlaceholderText('Name'), { target: { value: 'Europa' } });
     fireEvent.change(screen.getByPlaceholderText('Description'), { target: { value: 'Icy moon of Jupiter' } });
     fireEvent.click(screen.getByText('Create'));
-    await waitFor(() => expect(hook.create).toHaveBeenCalledWith({ name: 'Europa', description: 'Icy moon of Jupiter' }));
+    await waitFor(() => expect(createSpy).toHaveBeenCalledWith({ name: 'Europa', description: 'Icy moon of Jupiter' }));
 
     // Edit and Update
     fireEvent.click(screen.getAllByText('Edit')[0]);
     fireEvent.change(screen.getByPlaceholderText('Description'), { target: { value: 'Edited' } });
     fireEvent.click(screen.getByText('Update'));
-    await waitFor(() => expect(hook.update).toHaveBeenCalled());
+    await waitFor(() => expect(updateSpy).toHaveBeenCalled());
 
     // Delete
     fireEvent.click(screen.getAllByText('Delete')[1]);
-    await waitFor(() => expect(hook.remove).toHaveBeenCalledWith(2));
+    await waitFor(() => expect(removeSpy).toHaveBeenCalledWith(2));
 
     // Refresh
     fireEvent.click(screen.getByText('Refresh'));
-    expect(hook.refresh).toHaveBeenCalled();
+    expect(refreshSpy).toHaveBeenCalled();
   });
 });
