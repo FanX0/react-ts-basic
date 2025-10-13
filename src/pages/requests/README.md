@@ -11,13 +11,15 @@ Learn how to fetch data with `fetch` and `axios`, and how to build simple CRUD U
 ## Key Concepts
 - Fetching data
   ```tsx
-  const res = await fetch('/data.json');
+  // Use a relative path so it works under Vite base
+  const res = await fetch('data.json');
   const data = await res.json();
   ```
 - Axios
   ```tsx
   import axios from 'axios';
-  const { data } = await axios.get('/data.json');
+  // Use a relative path so it works under Vite base
+  const { data } = await axios.get('data.json');
   ```
 - Hooks
   - Encapsulate loading/error/state (`src/hooks/useFetch.ts`, `src/hooks/useAxios.ts`, `src/hooks/useDestinationsCrud*.ts`).
@@ -44,11 +46,20 @@ Learn how to fetch data with `fetch` and `axios`, and how to build simple CRUD U
     ```
   - Mock custom hooks:
     ```tsx
-    vi.mock('../../../hooks/useDestinationsCrud', () => ({ useDestinationsCrud: () => ({ items: [], loading: false, error: null }) }));
+    // Match the component's import location; example for files in fetch/crud/*
+    vi.mock('../../../../hooks/useDestinationsCrud', () => ({
+      useDestinationsCrud: () => ({ items: [], loading: false, error: null })
+    }));
     ```
 - Run tests:
   - `npm test` — run once
   - `npm run test:watch` — watch mode
+
+## Environment Flags (CRUD Modes)
+- `.env.production` controls behavior in deployment:
+  - Read-only demo: `VITE_USE_STATIC_DATA=true` — loads data from `public/data.json`, mutations disabled.
+  - Full CRUD: set `VITE_USE_STATIC_DATA=false` and provide `VITE_API_BASE_URL=https://your-api.example.com`.
+- Axios base URL is configured in `src/services/http.ts` via `VITE_API_BASE_URL`.
 
 ## Beginner Tips
 - Start with the `just*` examples to understand the basics.

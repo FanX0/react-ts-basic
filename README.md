@@ -51,11 +51,29 @@ src/
 ## Testing
 - Vitest + Testing Library with `jsdom` environment.
 - Config: `vite.config.js` (`test.environment`, `test.setupFiles`), setup in `src/test/setup.ts`.
+- Global matchers: types are augmented via `src/test/setup-globals.d.ts` with `@testing-library/jest-dom/vitest` — no per-file imports needed.
 - Guide: see `docs/TESTING.md`.
 
 ## Routing & Base Path
 - Uses `react-router` for pages under `src/pages`.
 - When deploying to GitHub Pages, the base is configured in `vite.config.js` as `base: '/react-ts-basic/'`.
+
+## Environment & Deployment
+- Development: `.env.development`
+  - `VITE_API_BASE_URL=http://localhost:3000`
+  - `VITE_USE_STATIC_DATA=false`
+- Production: `.env.production`
+  - Read-only demo: `VITE_USE_STATIC_DATA=true` (loads `public/data.json`)
+  - Enable CRUD: set `VITE_USE_STATIC_DATA=false` and provide `VITE_API_BASE_URL` to a live API
+- Axios client base URL comes from `src/services/http.ts` (`VITE_API_BASE_URL`).
+- Ensure CORS is allowed from your site origin when using a remote API.
+
+## CRUD Modes
+- Static demo (read-only): lists from `data.json`, mutations disabled.
+- API-backed CRUD: lists and mutations via `/destinations` on your API.
+  - Services: `src/services/api.ts` (fetch) and `src/services/api.axios.ts` (axios)
+  - Hooks: `src/hooks/useDestinationsCrud*.ts`
+  - UI pages under `src/pages/requests/*/crud/*`
 
 ## Contributing & Commit Style
 - Use feature-scoped commits to keep history clean:
@@ -67,7 +85,7 @@ src/
 ## Useful Docs
 - `src/modules/basic/README.md` — layout/UI props and usage
 - `src/pages/basic/easy/props/README.md` — props lessons
-- `src/pages/requests/README.md` — fetch/axios & CRUD overview
+- `src/pages/requests/README.md` — fetch/axios & CRUD overview, env flags, mocking
 - `docs/TESTING.md` — testing setup and examples
 
 ## Tech Stack
