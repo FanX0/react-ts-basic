@@ -11,8 +11,8 @@ Beginner-friendly guide for the `basic` feature module. This module provides lay
 
 ## Installation & Usage
 - Import via barrels:
-  - `import { AppBasicLayout } from 'src/modules/basic/layout'`
-  - `import { Card, Section, Button } from 'src/modules/basic/ui'`
+  - `import { AppBasicLayout } from '@/modules/basic/layout'`
+  - `import { Card, Section, Button } from '@/modules/basic/ui'`
 
 ## Props
 - AppBasicLayout
@@ -66,7 +66,7 @@ Beginner-friendly guide for the `basic` feature module. This module provides lay
   ```tsx
   import { render, screen } from '@testing-library/react';
   import { describe, it, expect } from 'vitest';
-  import { Card } from 'src/modules/basic/ui';
+  import { Card } from '@/modules/basic/ui';
 
   describe('Card', () => {
     it('renders children', () => {
@@ -82,4 +82,4 @@ Beginner-friendly guide for the `basic` feature module. This module provides lay
 - Use barrels for clean imports and consistent APIs.
 
 ## Further Reading
-- See `docs/Testing.md` for a step-by-step testing guide.
+- See `docs/TESTING.md` for a step-by-step testing guide.
