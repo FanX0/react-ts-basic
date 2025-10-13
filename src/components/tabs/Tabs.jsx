@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Header from "../layout/Header";
+import Header from "@/components/layout/Header";
 
 const Tabs = () => {
   const [destinations, setDestinations] = useState([]);

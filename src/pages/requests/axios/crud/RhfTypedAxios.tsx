@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useDestinationsCrudAxios } from "../../../../hooks/useDestinationsCrudAxios";
-import type { DestinationInputTypeOnly } from "../../../../types/destination.form";
+import { useDestinationsCrudAxios } from "@/hooks/useDestinationsCrudAxios";
+import type { DestinationInputTypeOnly } from "@/types/destination.form";
 
 const RhfTypedAxios = () => {
   const { items, loading, error, create, update, remove, refresh } = useDestinationsCrudAxios();

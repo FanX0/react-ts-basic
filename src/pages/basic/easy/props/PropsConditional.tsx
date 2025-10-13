@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import AppBasicLayout from '../../../../modules/basic/layout/AppBasicLayout';
-import Section from '../../../../modules/basic/ui/Section';
+import AppBasicLayout from '@/modules/basic/layout/AppBasicLayout';
+import Section from '@/modules/basic/ui/Section';
 
 function MaybeRender({ show }: { show: boolean }) {
   if (!show) return null; // null component

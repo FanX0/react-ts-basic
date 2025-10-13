@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { listDestinations } from "../services/api";
-import type { Destination } from "../types/destination";
+import { listDestinations } from "@/services/api";
+import type { Destination } from "@/types/destination";
 
 const Home = () => {
   const [destinations, setDestinations] = useState<Destination[]>([]);

@@ -1,4 +1,4 @@
-import type { Destination } from "../types/destination";
+import type { Destination } from "@/types/destination";
 
 const BASE_URL = (import.meta as any).env?.VITE_API_BASE_URL || "http://localhost:3000";
 const USE_STATIC = ((import.meta as any).env?.VITE_USE_STATIC_DATA || "").toLowerCase() === "true";

@@ -1,5 +1,5 @@
-import AppBasicLayout from '../../../../modules/basic/layout/AppBasicLayout';
-import Section from '../../../../modules/basic/ui/Section';
+import AppBasicLayout from '@/modules/basic/layout/AppBasicLayout';
+import Section from '@/modules/basic/ui/Section';
 
 type InfoProps = { title: string; subtitle?: string; extra?: string };
 function InfoCard({ title, subtitle, extra }: InfoProps) {

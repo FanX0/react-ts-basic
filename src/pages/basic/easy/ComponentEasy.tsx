@@ -1,8 +1,8 @@
 import { memo, useState } from 'react';
-import AppBasicLayout from '../../../modules/basic/layout/AppBasicLayout';
-import Card from '../../../modules/basic/ui/Card';
-import Section from '../../../modules/basic/ui/Section';
-import Button from '../../../modules/basic/ui/Button';
+import AppBasicLayout from '@/modules/basic/layout/AppBasicLayout';
+import Card from '@/modules/basic/ui/Card';
+import Section from '@/modules/basic/ui/Section';
+import Button from '@/modules/basic/ui/Button';
 
 type HelloProps = { name: string };
 function HelloCard({ name }: HelloProps) {

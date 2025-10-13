@@ -1,5 +1,5 @@
-import http from "./http";
-import type { Destination } from "../types/destination";
+import http from "@/services/http";
+import type { Destination } from "@/types/destination";
 
 const USE_STATIC = ((import.meta as any).env?.VITE_USE_STATIC_DATA || "").toLowerCase() === "true";
 const BASE_PATH = (import.meta as any).env?.BASE_URL || "/";

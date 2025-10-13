@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useFetch } from "../../../../hooks/useFetch";
+import { useFetch } from "@/hooks/useFetch";
 
 type Data = {
   destinations: { name: string; description: string }[];

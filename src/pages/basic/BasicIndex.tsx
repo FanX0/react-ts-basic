@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router';
-import AppBasicLayout from '../../modules/basic/layout/AppBasicLayout';
-import Section from '../../modules/basic/ui/Section';
+import AppBasicLayout from '@/modules/basic/layout/AppBasicLayout';
+import Section from '@/modules/basic/ui/Section';
 
 export default function BasicIndex() {
   useEffect(() => {

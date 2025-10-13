@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useDestinationsCrud } from "../../../../hooks/useDestinationsCrud";
-import { DestinationInputSchema, type DestinationInput } from "../../../../schemas/destination";
+import { useDestinationsCrud } from "@/hooks/useDestinationsCrud";
+import { DestinationInputSchema, type DestinationInput } from "@/schemas/destination";
 
 const RhfZodFetch = () => {
   const { items, loading, error, create, refresh } = useDestinationsCrud();

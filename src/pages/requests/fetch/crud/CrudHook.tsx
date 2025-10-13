@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDestinationsCrud } from "../../../../hooks/useDestinationsCrud";
+import { useDestinationsCrud } from "@/hooks/useDestinationsCrud";
 
 const CrudHook = () => {
   const { items, loading, error, refresh, create, update, remove } = useDestinationsCrud();

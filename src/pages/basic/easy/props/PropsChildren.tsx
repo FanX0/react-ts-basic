@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
-import AppBasicLayout from '../../../../modules/basic/layout/AppBasicLayout';
-import Section from '../../../../modules/basic/ui/Section';
-import Card from '../../../../modules/basic/ui/Card';
+import AppBasicLayout from '@/modules/basic/layout/AppBasicLayout';
+import Section from '@/modules/basic/ui/Section';
+import Card from '@/modules/basic/ui/Card';
 
 function Panel({ title, children }: { title: string; children: ReactNode }) {
   return (

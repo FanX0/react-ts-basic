@@ -1,5 +1,5 @@
-import AppBasicLayout from '../../../../modules/basic/layout/AppBasicLayout';
-import Section from '../../../../modules/basic/ui/Section';
+import AppBasicLayout from '@/modules/basic/layout/AppBasicLayout';
+import Section from '@/modules/basic/ui/Section';
 
 function UserBadge({ name = 'Guest', age = 18 }: { name?: string; age?: number }) {
   return <p>{name} — {age} years old</p>;

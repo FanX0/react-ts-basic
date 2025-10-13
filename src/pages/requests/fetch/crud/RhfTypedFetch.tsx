@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useDestinationsCrud } from "../../../../hooks/useDestinationsCrud";
-import type { DestinationInputTypeOnly } from "../../../../types/destination.form";
+import { useDestinationsCrud } from "@/hooks/useDestinationsCrud";
+
+import type { DestinationInputTypeOnly } from "@/types/destination.form";
 
 const RhfTypedFetch = () => {
   const { items, loading, error, create, update, remove, refresh } = useDestinationsCrud();
