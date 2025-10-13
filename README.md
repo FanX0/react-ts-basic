@@ -12,14 +12,14 @@ Beginner-friendly React + Vite project focused on learning core concepts with Ty
 
 ## Learning Map
 - Basics (UI + Layout)
-  - `src/modules/basic/layout/AppBasicLayout.tsx` — simple page layout
-  - `src/modules/basic/ui/{Section.tsx, Card.tsx, Button.tsx}` — basic UI blocks
-  - Import via barrels: `src/modules/basic/{layout|ui}/index.ts`
+  - `@/modules/basic/layout/AppBasicLayout` — simple page layout
+  - `@/modules/basic/ui/{Section, Card, Button}` — basic UI blocks
+  - Import via barrels: `@/modules/basic/{layout|ui}`
 - Props Lessons
   - `src/pages/basic/easy/props/*` — intro, destructuring, spread, children, conditional
 - Requests (Data Fetching)
-  - `src/pages/requests/fetch/*` — fetch basics, typed fetch, hooks, CRUD
-  - `src/pages/requests/axios/*` — axios basics, typed axios, hooks, CRUD
+  - `@/pages/requests/fetch/*` — fetch basics, typed fetch, hooks, CRUD
+  - `@/pages/requests/axios/*` — axios basics, typed axios, hooks, CRUD
 
 ## Project Structure
 ```
@@ -44,6 +44,7 @@ src/
 - `npm run dev` — start dev server
 - `npm run build` — build for production
 - `npm run preview` — preview build
+- `npm server` — run json-server
 - `npm test` — run tests once
 - `npm run test:watch` — run tests in watch mode
 - `npm run lint` — run ESLint
@@ -53,6 +54,11 @@ src/
 - Config: `vite.config.js` (`test.environment`, `test.setupFiles`), setup in `src/test/setup.ts`.
 - Global matchers: types are augmented via `src/test/setup-globals.d.ts` with `@testing-library/jest-dom/vitest` — no per-file imports needed.
 - Guide: see `docs/TESTING.md`.
+
+## Path Alias
+- Configured in `tsconfig.json` and `vite.config.js`:
+  - `@/*` → `src/*`
+- Use `@` imports without `.ts/.tsx` extensions, e.g. `import { Section } from '@/modules/basic/ui'`.
 
 ## Routing & Base Path
 - Uses `react-router` for pages under `src/pages`.

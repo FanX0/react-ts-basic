@@ -55,7 +55,7 @@ This folder contains beginner-focused lessons showing how props work in React.
   ```tsx
   import { render, screen } from '@testing-library/react';
   import { describe, it, expect } from 'vitest';
-  import PropsConditional from './PropsConditional.tsx';
+  import PropsConditional from '@/pages/basic/easy/props/PropsConditional';
 
   describe('PropsConditional', () => {
     it('shows hidden text when toggled', () => {
@@ -71,4 +71,4 @@ This folder contains beginner-focused lessons showing how props work in React.
 - Use `children` for nested content; pass callbacks like `onClick` for behavior.
 
 ## Further Reading
-- See `docs/Testing.md` for a step-by-step testing guide.
+- See `docs/TESTING.md` for a step-by-step testing guide.

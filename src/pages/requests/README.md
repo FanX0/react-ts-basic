@@ -22,7 +22,7 @@ Learn how to fetch data with `fetch` and `axios`, and how to build simple CRUD U
   const { data } = await axios.get('data.json');
   ```
 - Hooks
-  - Encapsulate loading/error/state (`src/hooks/useFetch.ts`, `src/hooks/useAxios.ts`, `src/hooks/useDestinationsCrud*.ts`).
+  - Encapsulate loading/error/state (`@/hooks/useFetch.ts`, `@/hooks/useAxios.ts`, `@/hooks/useDestinationsCrud*.ts`).
 - CRUD
   - List items, create new ones, update existing ones, and delete.
 
@@ -46,8 +46,8 @@ Learn how to fetch data with `fetch` and `axios`, and how to build simple CRUD U
     ```
   - Mock custom hooks:
     ```tsx
-    // Match the component's import location; example for files in fetch/crud/*
-    vi.mock('../../../../hooks/useDestinationsCrud', () => ({
+    // Match the component's import location; use @ alias consistently
+    vi.mock('@/hooks/useDestinationsCrud', () => ({
       useDestinationsCrud: () => ({ items: [], loading: false, error: null })
     }));
     ```
@@ -67,4 +67,4 @@ Learn how to fetch data with `fetch` and `axios`, and how to build simple CRUD U
 - Write small tests that check what the user sees (text, buttons, list items).
 
 ## Further Reading
-- See `docs/Testing.md` for a step-by-step testing guide.
+- See `docs/TESTING.md` for a step-by-step testing guide.

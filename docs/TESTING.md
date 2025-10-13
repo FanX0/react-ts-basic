@@ -19,7 +19,7 @@ This project uses **Vitest** and **@testing-library/react** with a **jsdom** env
   ```tsx
   import { render, screen } from '@testing-library/react';
   import { describe, it, expect } from 'vitest';
-  import ComponentEasy from 'src/pages/basic/easy/ComponentEasy.tsx';
+  import ComponentEasy from '@/pages/basic/easy/ComponentEasy';
 
   describe('ComponentEasy', () => {
     it('renders heading', () => {
@@ -43,8 +43,8 @@ This project uses **Vitest** and **@testing-library/react** with a **jsdom** env
 - Custom hooks
   ```tsx
   import { vi } from 'vitest';
-  // Match the component's import path. For pages under fetch/crud/*, use a relative path:
-  vi.mock('../../../../hooks/useFetch', () => ({ useFetch: () => ({ data: {}, loading: false, error: null }) }));
+  // Match the component's import path. Use the @ alias consistently:
+  vi.mock('@/hooks/useFetch', () => ({ useFetch: () => ({ data: {}, loading: false, error: null }) }));
   ```
 
 ### Mock Path Alignment
@@ -52,7 +52,7 @@ This project uses **Vitest** and **@testing-library/react** with a **jsdom** env
 - Examples:
   ```tsx
   // Mock axios-based services used by pages under axios/crud/*
-  vi.mock('../../../../services/api.axios', () => ({
+  vi.mock('@/services/api.axios', () => ({
     listDestinations: vi.fn(),
     createDestination: vi.fn(),
     updateDestination: vi.fn(),
@@ -60,7 +60,7 @@ This project uses **Vitest** and **@testing-library/react** with a **jsdom** env
   }));
 
   // Mock fetch-based services used by pages under fetch/crud/*
-  vi.mock('../../../../services/api', () => ({
+  vi.mock('@/services/api', () => ({
     listDestinations: vi.fn(),
     createDestination: vi.fn(),
     updateDestination: vi.fn(),
