@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
-import AxiosEasy from './AxiosEasy.tsx';
+import AxiosEasy from '@/pages/requests/axios/justaxios/AxiosEasy';
 
 vi.mock('axios', () => {
   return {

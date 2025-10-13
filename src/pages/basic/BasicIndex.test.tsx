@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import { describe, it, expect } from 'vitest';
-import BasicIndex from './BasicIndex.tsx';
+import BasicIndex from '@/pages/basic/BasicIndex';
 
 describe('BasicIndex', () => {
   it('renders key basic links', () => {

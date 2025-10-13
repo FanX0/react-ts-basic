@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import FetchHook from './FetchHook.tsx';
+import FetchHook from './FetchHook';
 
 describe('FetchHook', () => {
   beforeEach(() => {

@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
-import RhfZodFetch from './RhfZodFetch.tsx';
+import RhfZodFetch from '@/pages/requests/fetch/crud/RhfZodFetch';
 
 const items = [
   { id: 1, name: 'Moon', description: "Earth's natural satellite" },
@@ -9,7 +9,7 @@ const items = [
 const refreshSpy = vi.fn();
 const createSpy = vi.fn();
 
-vi.mock('../../../../hooks/useDestinationsCrud', () => ({
+vi.mock('@/hooks/useDestinationsCrud', () => ({
   useDestinationsCrud: () => ({
     items,
     loading: false,

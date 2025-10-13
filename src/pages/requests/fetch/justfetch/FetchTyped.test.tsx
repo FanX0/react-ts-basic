@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import FetchTyped from './FetchTyped.tsx';
+import FetchTyped from '@/pages/requests/fetch/justfetch/FetchTyped';
 
 describe('FetchTyped', () => {
   beforeEach(() => {
