@@ -3,12 +3,34 @@
 Beginner-friendly React + Vite project focused on learning core concepts with TypeScript: components, props, lists/keys, effects, data fetching with `fetch` and `axios`, and CRUD patterns using hooks and React Hook Form.
 
 ## Quick Start
-- Requirements: `Node 20.19+` (recommend `Node 22`), `npm`
-- Install dependencies: `npm install`
-- Start dev server: `npm run dev`
-  - App runs at `http://localhost:5173/` (or your chosen port). For GitHub Pages, the base path is `/react-ts-basic/`.
-- Build for production: `npm run build`
-- Preview build locally: `npm run preview`
+ - Install dependencies: `npm install`
+  - Start dev server: `npm run dev`
+    - App runs at `http://localhost:5173/` (or your chosen port). For GitHub Pages, the base path is `/react-ts-basic/`.
+  - Build for production: `npm run build`
+  - Preview build locally: `npm run preview`
+
+## Prerequisites
+- Node `20.19+` (recommend Node `22`)
+- npm `10+`
+- Git (optional, for cloning and version control)
+
+## Getting Started: JSON Server
+- Run the mock API locally:
+  - `npm run server` — starts JSON Server at `http://localhost:3000` serving `db.json`.
+- Configure development environment:
+  ```env
+  # .env.development
+  VITE_API_BASE_URL=http://localhost:3000
+  VITE_USE_STATIC_DATA=false
+  ```
+- Use CRUD pages under `src/pages/requests/*/crud/*`.
+- Endpoints (JSON Server):
+  - `GET /destinations`
+  - `POST /destinations`
+  - `PATCH /destinations/:id`
+  - `DELETE /destinations/:id`
+- Axios base URL comes from `src/services/http.ts` via `VITE_API_BASE_URL`.
+- Tip: If you see CORS errors with a remote API, enable CORS for your site origin.
 
 ## Learning Map
 - Basics (UI + Layout)
