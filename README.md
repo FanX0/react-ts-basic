@@ -123,18 +123,24 @@ src/
   - All tests seed `sessionStorage` per-spec and assert visible flows.
 
 ## LocalStorage (Client Storage)
-- Read-only examples under `src/pages/requests/localstorage/juststorage/*`:
-  - Easy, Typed, and Hook pages that mirror the sessionStorage juststorage set.
+- Juststorage examples under `src/pages/requests/localstorage/juststorage/*`:
+  - `StorageEasy` and `StorageTyped` are minimal local demos that support create (no edit/delete yet).
+  - `StorageHook` shows client-side refresh using `useDestinationsLocalStorage`.
   - Uses `src/services/localStorage.ts` helpers and/or `src/hooks/useDestinationsLocalStorage.ts`.
 - Full CRUD examples under `src/pages/requests/localstorage/crud/*`:
-  - Easy and Hook variants implemented using `src/services/localStorage.ts` and `src/hooks/useDestinationsLocalStorage.ts`.
-  - Coming soon: Typed, RHF, Zod, and RHF + Zod variants aligned with `src/schemas/destination.ts`.
+  - Implemented variants: Easy, Hook, Typed, Zod, RHF Easy, and RHF + Zod.
+  - All use `src/services/localStorage.ts`; hook-driven pages use `src/hooks/useDestinationsLocalStorage.ts`.
+  - Zod/RHF variants validate inputs with `src/schemas/destination.ts`.
 - Routes
   - `/local-juststorage-easy`
   - `/local-juststorage-typed`
   - `/local-juststorage-hook`
   - `/local-crud-easy`
   - `/local-crud-hook`
+  - `/local-crud-typed`
+  - `/local-crud-zod`
+  - `/local-crud-rhf-easy`
+  - `/local-crud-rhf-zod`
 - Testing
   - LocalStorage tests: seed and clear within each test.
     ```ts
