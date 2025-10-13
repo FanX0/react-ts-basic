@@ -33,6 +33,16 @@ function App() {
         <Link to="/axios-crud-rhf-zod">CRUD RHF + Zod (Axios)</Link>
         <Link to="/axios-crud-rhf-pro">CRUD RHF Pro (Axios)</Link>
         <hr />
+        <Link to="/local-juststorage-easy">LocalStorage Easy</Link>
+        <Link to="/local-juststorage-typed">LocalStorage Typed</Link>
+        <Link to="/local-juststorage-hook">LocalStorage Hook</Link>
+        <Link to="/local-crud-easy">LocalStorage CRUD Easy</Link>
+        <Link to="/local-crud-hook">LocalStorage CRUD Hook</Link>
+        <Link to="/local-crud-typed">LocalStorage CRUD Typed</Link>
+        <Link to="/local-crud-zod">LocalStorage CRUD Zod</Link>
+        <Link to="/local-crud-rhf-easy">LocalStorage CRUD RHF Easy</Link>
+        <Link to="/local-crud-rhf-zod">LocalStorage CRUD RHF + Zod</Link>
+        <hr />
         <Link to="/session-juststorage-easy">SessionStorage Easy</Link>
         <Link to="/session-juststorage-typed">SessionStorage Typed</Link>
         <Link to="/session-juststorage-hook">SessionStorage Hook</Link>

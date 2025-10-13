@@ -45,6 +45,15 @@ import RhfTypedAxios from "@/pages/requests/axios/crud/RhfTypedAxios.tsx";
 import StorageEasy from "@/pages/requests/sessionstorage/juststorage/StorageEasy.tsx";
 import StorageHook from "@/pages/requests/sessionstorage/juststorage/StorageHook.tsx";
 import StorageTyped from "@/pages/requests/sessionstorage/juststorage/StorageTyped.tsx";
+import LocalStorageEasy from "@/pages/requests/localstorage/juststorage/StorageEasy.tsx";
+import LocalStorageHook from "@/pages/requests/localstorage/juststorage/StorageHook.tsx";
+import LocalStorageTyped from "@/pages/requests/localstorage/juststorage/StorageTyped.tsx";
+import CrudEasyLocal from "@/pages/requests/localstorage/crud/CrudEasyLocal.tsx";
+import CrudHookLocal from "@/pages/requests/localstorage/crud/CrudHookLocal.tsx";
+import CrudTypedLocal from "@/pages/requests/localstorage/crud/CrudTypedLocal.tsx";
+import CrudZodLocal from "@/pages/requests/localstorage/crud/CrudZodLocal.tsx";
+import RhfEasyLocal from "@/pages/requests/localstorage/crud/RhfEasyLocal.tsx";
+import RhfZodLocal from "@/pages/requests/localstorage/crud/RhfZodLocal.tsx";
 import CrudEasySession from "@/pages/requests/sessionstorage/crud/CrudEasySession.tsx";
 import CrudHookSession from "@/pages/requests/sessionstorage/crud/CrudHookSession.tsx";
 import CrudTypedSession from "@/pages/requests/sessionstorage/crud/CrudTypedSession.tsx";
@@ -103,6 +112,15 @@ createRoot(document.getElementById("root")).render(
         <Route path="/session-crud-typed" element={<CrudTypedSession />} />
         <Route path="/session-crud-rhf-easy" element={<RhfEasySession />} />
         <Route path="/session-crud-rhf-zod" element={<RhfZodSession />} />
+        <Route path="/local-juststorage-easy" element={<LocalStorageEasy />} />
+        <Route path="/local-juststorage-hook" element={<LocalStorageHook />} />
+        <Route path="/local-juststorage-typed" element={<LocalStorageTyped />} />
+        <Route path="/local-crud-easy" element={<CrudEasyLocal />} />
+        <Route path="/local-crud-hook" element={<CrudHookLocal />} />
+        <Route path="/local-crud-typed" element={<CrudTypedLocal />} />
+        <Route path="/local-crud-zod" element={<CrudZodLocal />} />
+        <Route path="/local-crud-rhf-easy" element={<RhfEasyLocal />} />
+        <Route path="/local-crud-rhf-zod" element={<RhfZodLocal />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

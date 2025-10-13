@@ -43,6 +43,7 @@ Beginner-friendly React + Vite project focused on learning core concepts with Ty
   - `@/pages/requests/fetch/*` — fetch basics, typed fetch, hooks, CRUD
   - `@/pages/requests/axios/*` — axios basics, typed axios, hooks, CRUD
   - `@/pages/requests/sessionstorage/*` — client-side storage examples (read-only juststorage and full CRUD)
+  - `@/pages/requests/localstorage/*` — client-side storage examples (read-only juststorage and full CRUD)
 
 ## Project Structure
 ```
@@ -52,7 +53,7 @@ src/
   pages/               # route pages (basic lessons, requests examples)
   hooks/               # reusable data hooks (fetch, axios, CRUD)
   services/            # API services (axios + JSON Server)
-                      # plus client storage helpers (sessionStorage)
+                      # plus client storage helpers (localStorage, sessionStorage)
   schemas/             # zod schemas and types
   test/                # test setup for Vitest
 ```
@@ -120,6 +121,29 @@ src/
   - Easy, Hook, Typed, RHF, Zod, and RHF + Zod variants using `src/services/sessionStorage.ts` and `src/hooks/useDestinationsSessionStorage.ts`.
   - Zod/RHF variants validate inputs using `src/schemas/destination.ts`.
   - All tests seed `sessionStorage` per-spec and assert visible flows.
+
+## LocalStorage (Client Storage)
+- Read-only examples under `src/pages/requests/localstorage/juststorage/*`:
+  - Easy, Typed, and Hook pages that mirror the sessionStorage juststorage set.
+  - Uses `src/services/localStorage.ts` helpers and/or `src/hooks/useDestinationsLocalStorage.ts`.
+- Full CRUD examples under `src/pages/requests/localstorage/crud/*`:
+  - Easy and Hook variants implemented using `src/services/localStorage.ts` and `src/hooks/useDestinationsLocalStorage.ts`.
+  - Coming soon: Typed, RHF, Zod, and RHF + Zod variants aligned with `src/schemas/destination.ts`.
+- Routes
+  - `/local-juststorage-easy`
+  - `/local-juststorage-typed`
+  - `/local-juststorage-hook`
+  - `/local-crud-easy`
+  - `/local-crud-hook`
+- Testing
+  - LocalStorage tests: seed and clear within each test.
+    ```ts
+    beforeEach(() => localStorage.clear());
+    localStorage.setItem('destinations', JSON.stringify([
+      { id: 1, name: 'Moon', description: "Earth's natural satellite" },
+      { id: 2, name: 'Mars', description: 'The red planet' },
+    ]));
+    ```
 
 ## Contributing & Commit Style
 - Use feature-scoped commits to keep history clean:
