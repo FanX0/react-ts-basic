@@ -7,6 +7,8 @@ Learn how to fetch data with `fetch` and `axios`, and how to build simple CRUD U
 - `fetch/crud/*` — CRUD examples with fetch, including RHF (React Hook Form) and typed/zod variants
 - `axios/justaxios/*` — basic axios, typed axios, and axios via hook
 - `axios/crud/*` — CRUD with axios, including RHF and zod
+ - `sessionstorage/juststorage/*` — client-side storage read-only examples (Easy, Typed, Hook)
+ - `sessionstorage/crud/*` — client-side storage CRUD examples (Easy, Hook, Typed, RHF, Zod, RHF + Zod)
 
 ## Key Concepts
 - Fetching data
@@ -21,6 +23,21 @@ Learn how to fetch data with `fetch` and `axios`, and how to build simple CRUD U
   // Use a relative path so it works under Vite base
   const { data } = await axios.get('data.json');
   ```
+ - SessionStorage
+   ```tsx
+   import * as session from '@/services/sessionStorage';
+   import { useEffect, useState } from 'react';
+
+   // Read-only juststorage pages load once on mount
+   const [items, setItems] = useState([]);
+   useEffect(() => {
+     setItems(session.load());
+   }, []);
+
+   // Hook-driven pages use a dedicated hook
+   // import { useDestinationsSessionStorage } from '@/hooks/useDestinationsSessionStorage';
+   // const { items, loading, error, refresh, create, update, remove } = useDestinationsSessionStorage();
+   ```
 - Hooks
   - Encapsulate loading/error/state (`@/hooks/useFetch.ts`, `@/hooks/useAxios.ts`, `@/hooks/useDestinationsCrud*.ts`).
 - CRUD
@@ -51,6 +68,13 @@ Learn how to fetch data with `fetch` and `axios`, and how to build simple CRUD U
       useDestinationsCrud: () => ({ items: [], loading: false, error: null })
     }));
     ```
+  - Seed `sessionStorage`:
+    ```tsx
+    beforeEach(() => sessionStorage.clear());
+    sessionStorage.setItem('destinations', JSON.stringify([
+      { id: 1, name: 'Moon', description: "Earth's natural satellite" },
+    ]));
+    ```
 - Run tests:
   - `npm test` — run once
   - `npm run test:watch` — watch mode
@@ -60,6 +84,10 @@ Learn how to fetch data with `fetch` and `axios`, and how to build simple CRUD U
   - Read-only demo: `VITE_USE_STATIC_DATA=true` — loads data from `public/data.json`, mutations disabled.
   - Full CRUD: set `VITE_USE_STATIC_DATA=false` and provide `VITE_API_BASE_URL=https://your-api.example.com`.
 - Axios base URL is configured in `src/services/http.ts` via `VITE_API_BASE_URL`.
+
+## Notes on Read-only Pages
+- The `sessionstorage/juststorage` Easy and Typed pages mirror `fetch/justfetch` but are intentionally read-only: no create/edit/delete.
+- Use `StorageHook` to demonstrate client-side refresh without server calls.
 
 ## Beginner Tips
 - Start with the `just*` examples to understand the basics.

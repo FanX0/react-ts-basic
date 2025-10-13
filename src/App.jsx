@@ -32,6 +32,15 @@ function App() {
         <Link to="/axios-crud-rhf-typed">CRUD RHF Typed (Axios)</Link>
         <Link to="/axios-crud-rhf-zod">CRUD RHF + Zod (Axios)</Link>
         <Link to="/axios-crud-rhf-pro">CRUD RHF Pro (Axios)</Link>
+        <hr />
+        <Link to="/session-juststorage-easy">SessionStorage Easy</Link>
+        <Link to="/session-juststorage-typed">SessionStorage Typed</Link>
+        <Link to="/session-juststorage-hook">SessionStorage Hook</Link>
+        <Link to="/session-crud-easy">SessionStorage CRUD Easy</Link>
+        <Link to="/session-crud-hook">SessionStorage CRUD Hook</Link>
+        <Link to="/session-crud-typed">SessionStorage CRUD Typed</Link>
+        <Link to="/session-crud-rhf-easy">SessionStorage CRUD RHF Easy</Link>
+        <Link to="/session-crud-rhf-zod">SessionStorage CRUD RHF + Zod</Link>
       </nav>
     </div>
   );

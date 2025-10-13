@@ -68,6 +68,39 @@ This project uses **Vitest** and **@testing-library/react** with a **jsdom** env
   }));
   ```
 
+## SessionStorage Tests
+- Seed `sessionStorage` within each test and clear it in `beforeEach`.
+- Use the `@/*` path alias for imports.
+- Example (read-only + refresh):
+  ```tsx
+  import { render, screen, fireEvent } from '@testing-library/react';
+  import { describe, it, beforeEach, expect } from 'vitest';
+  import StorageHook from '@/pages/requests/sessionstorage/juststorage/StorageHook';
+
+  describe('SessionStorage: StorageHook', () => {
+    beforeEach(() => {
+      sessionStorage.clear();
+    });
+
+    it('renders items and refresh updates from storage', async () => {
+      sessionStorage.setItem('destinations', JSON.stringify([
+        { id: 1, name: 'Moon', description: "Earth's natural satellite" },
+      ]));
+      render(<StorageHook />);
+      expect((await screen.findAllByRole('listitem'))[0]).toHaveTextContent('Moon');
+
+      sessionStorage.setItem('destinations', JSON.stringify([
+        { id: 1, name: 'Europa', description: 'Icy moon of Jupiter' },
+      ]));
+      fireEvent.click(screen.getByText('Refresh'));
+      expect(await screen.findByText('Europa')).toBeInTheDocument();
+    });
+  });
+  ```
+
+- For Zod validations (RHF + Zod pages), assert strings from `src/schemas/destination.ts`:
+  - `"Name is required"`, `"Description is required"`.
+
 ### Troubleshooting
 - “is not a spy or a call to a spy”: mock the exact import path used by the component.
 - Base path issues: use relative `'data.json'` (not `'/data.json'`) to work under Vite’s `base`.

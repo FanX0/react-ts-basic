@@ -42,6 +42,14 @@ import RhfEasyAxios from "@/pages/requests/axios/crud/RhfEasyAxios.tsx";
 import RhfZodAxios from "@/pages/requests/axios/crud/RhfZodAxios.tsx";
 import RhfProAxios from "@/pages/requests/axios/crud/RhfProAxios.tsx";
 import RhfTypedAxios from "@/pages/requests/axios/crud/RhfTypedAxios.tsx";
+import StorageEasy from "@/pages/requests/sessionstorage/juststorage/StorageEasy.tsx";
+import StorageHook from "@/pages/requests/sessionstorage/juststorage/StorageHook.tsx";
+import StorageTyped from "@/pages/requests/sessionstorage/juststorage/StorageTyped.tsx";
+import CrudEasySession from "@/pages/requests/sessionstorage/crud/CrudEasySession.tsx";
+import CrudHookSession from "@/pages/requests/sessionstorage/crud/CrudHookSession.tsx";
+import CrudTypedSession from "@/pages/requests/sessionstorage/crud/CrudTypedSession.tsx";
+import RhfEasySession from "@/pages/requests/sessionstorage/crud/RhfEasySession.tsx";
+import RhfZodSession from "@/pages/requests/sessionstorage/crud/RhfZodSession.tsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -87,6 +95,14 @@ createRoot(document.getElementById("root")).render(
         <Route path="/axios-crud-rhf-typed" element={<RhfTypedAxios />} />
         <Route path="/axios-crud-rhf-zod" element={<RhfZodAxios />} />
         <Route path="/axios-crud-rhf-pro" element={<RhfProAxios />} />
+        <Route path="/session-juststorage-easy" element={<StorageEasy />} />
+        <Route path="/session-juststorage-hook" element={<StorageHook />} />
+        <Route path="/session-juststorage-typed" element={<StorageTyped />} />
+        <Route path="/session-crud-easy" element={<CrudEasySession />} />
+        <Route path="/session-crud-hook" element={<CrudHookSession />} />
+        <Route path="/session-crud-typed" element={<CrudTypedSession />} />
+        <Route path="/session-crud-rhf-easy" element={<RhfEasySession />} />
+        <Route path="/session-crud-rhf-zod" element={<RhfZodSession />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

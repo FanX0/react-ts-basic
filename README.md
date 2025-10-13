@@ -42,6 +42,7 @@ Beginner-friendly React + Vite project focused on learning core concepts with Ty
 - Requests (Data Fetching)
   - `@/pages/requests/fetch/*` — fetch basics, typed fetch, hooks, CRUD
   - `@/pages/requests/axios/*` — axios basics, typed axios, hooks, CRUD
+  - `@/pages/requests/sessionstorage/*` — client-side storage examples (read-only juststorage and full CRUD)
 
 ## Project Structure
 ```
@@ -51,6 +52,7 @@ src/
   pages/               # route pages (basic lessons, requests examples)
   hooks/               # reusable data hooks (fetch, axios, CRUD)
   services/            # API services (axios + JSON Server)
+                      # plus client storage helpers (sessionStorage)
   schemas/             # zod schemas and types
   test/                # test setup for Vitest
 ```
@@ -76,6 +78,11 @@ src/
 - Config: `vite.config.js` (`test.environment`, `test.setupFiles`), setup in `src/test/setup.ts`.
 - Global matchers: types are augmented via `src/test/setup-globals.d.ts` with `@testing-library/jest-dom/vitest` — no per-file imports needed.
 - Guide: see `docs/TESTING.md`.
+ - SessionStorage tests: seed and clear `sessionStorage` within each test.
+   ```ts
+   beforeEach(() => sessionStorage.clear());
+   sessionStorage.setItem('destinations', JSON.stringify([{ id: 1, name: 'Moon', description: "Earth's natural satellite" }]));
+   ```
 
 ## Path Alias
 - Configured in `tsconfig.json` and `vite.config.js`:
@@ -105,6 +112,15 @@ src/
   - Hooks: `src/hooks/useDestinationsCrud*.ts`
   - UI pages under `src/pages/requests/*/crud/*`
 
+## SessionStorage (Client Storage)
+- Read-only examples under `src/pages/requests/sessionstorage/juststorage/*`:
+  - Easy and Typed pages mirror "fetch justfetch" but read-only (no create/edit/delete).
+  - Hook variant (`StorageHook`) shows a refresh of client data.
+- Full CRUD examples under `src/pages/requests/sessionstorage/crud/*`:
+  - Easy, Hook, Typed, RHF, Zod, and RHF + Zod variants using `src/services/sessionStorage.ts` and `src/hooks/useDestinationsSessionStorage.ts`.
+  - Zod/RHF variants validate inputs using `src/schemas/destination.ts`.
+  - All tests seed `sessionStorage` per-spec and assert visible flows.
+
 ## Contributing & Commit Style
 - Use feature-scoped commits to keep history clean:
   - `basic: add module README (layout, ui, barrels)`
@@ -115,7 +131,7 @@ src/
 ## Useful Docs
 - `src/modules/basic/README.md` — layout/UI props and usage
 - `src/pages/basic/easy/props/README.md` — props lessons
-- `src/pages/requests/README.md` — fetch/axios & CRUD overview, env flags, mocking
+- `src/pages/requests/README.md` — fetch/axios/sessionStorage overview, env flags, mocking
 - `docs/TESTING.md` — testing setup and examples
 
 ## Tech Stack
