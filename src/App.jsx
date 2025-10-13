@@ -1,5 +1,5 @@
-import Header from "./components/layout/Header";
-import Home from "./pages/Home.tsx";
+import Header from "@/components/layout/Header";
+import Home from "@/pages/Home";
 import { Link } from "react-router";
 
 function App() {
