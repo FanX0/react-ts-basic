@@ -42,6 +42,8 @@ function App() {
         <Link to="/local-crud-zod">LocalStorage CRUD Zod</Link>
         <Link to="/local-crud-rhf-easy">LocalStorage CRUD RHF Easy</Link>
         <Link to="/local-crud-rhf-zod">LocalStorage CRUD RHF + Zod</Link>
+        <Link to="/local-basic-theme">Theme Basic</Link>
+        <Link to="/local-basic-cart">Cart Snapshot Basic</Link>
         <hr />
         <Link to="/session-juststorage-easy">SessionStorage Easy</Link>
         <Link to="/session-juststorage-typed">SessionStorage Typed</Link>

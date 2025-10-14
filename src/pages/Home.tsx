@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router";
 import { listDestinations } from "@/services/api";
 import type { Destination } from "@/types/destination";
 
@@ -43,21 +42,11 @@ const Home = () => {
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: "red" }}>Error: {error}</p>}
       {!loading && !error && (
-        <>
-          <ul>
-            {destinations.map((d) => (
-              <li key={String((d as any).id ?? d.name)}>{d.name}</li>
-            ))}
-          </ul>
-
-          <div style={{ marginTop: "1rem" }}>
-            <h3>LocalStorage Basics</h3>
-            <ul>
-              <li><Link to="/local-basic-theme">Theme Basic</Link></li>
-              <li><Link to="/local-basic-cart">Cart Snapshot Basic</Link></li>
-            </ul>
-          </div>
-        </>
+        <ul>
+          {destinations.map((d) => (
+            <li key={String((d as any).id ?? d.name)}>{d.name}</li>
+          ))}
+        </ul>
       )}
     </div>
   );
