@@ -23,7 +23,7 @@ Beginner-friendly React + Vite project focused on learning core concepts with Ty
   VITE_API_BASE_URL=http://localhost:3000
   VITE_USE_STATIC_DATA=false
   ```
-- Use CRUD pages under `src/pages/requests/*/crud/*`.
+- Use CRUD pages under `src/pages/data/http/*/crud/*`.
 - Endpoints (JSON Server):
   - `GET /destinations`
   - `POST /destinations`
@@ -40,17 +40,20 @@ Beginner-friendly React + Vite project focused on learning core concepts with Ty
 - Props Lessons
   - `src/pages/basic/easy/props/*` — intro, destructuring, spread, children, conditional
 - Requests (Data Fetching)
-  - `@/pages/requests/fetch/*` — fetch basics, typed fetch, hooks, CRUD
-  - `@/pages/requests/axios/*` — axios basics, typed axios, hooks, CRUD
-  - `@/pages/requests/sessionstorage/*` — client-side storage examples (read-only juststorage and full CRUD)
-  - `@/pages/requests/localstorage/*` — client-side storage examples (read-only juststorage and full CRUD)
+  - `@/pages/data/http/fetch/*` — fetch basics, typed fetch, hooks, CRUD
+  - `@/pages/data/http/axios/*` — axios basics, typed axios, hooks, CRUD
+  - `@/pages/data/clientstorage/sessionstorage/*` — client-side storage examples (read-only juststorage and full CRUD)
+  - `@/pages/data/clientstorage/localstorage/*` — client-side storage examples (read-only juststorage and full CRUD)
 
 ## Project Structure
 ```
 src/
   components/          # global primitives (accordion, tabs, disclosure, header)
   modules/basic/       # feature module (layout + UI) with barrels
-  pages/               # route pages (basic lessons, requests examples)
+  pages/               # route pages (basic lessons, data examples)
+    data/
+      http/            # fetch + axios examples (just* and CRUD variants)
+      clientstorage/   # sessionStorage + localStorage (juststorage and CRUD variants)
   hooks/               # reusable data hooks (fetch, axios, CRUD)
   services/            # API services (axios + JSON Server)
                       # plus client storage helpers (localStorage, sessionStorage)
@@ -109,25 +112,34 @@ src/
 ## CRUD Modes
 - Static demo (read-only): lists from `data.json`, mutations disabled.
 - API-backed CRUD: lists and mutations via `/destinations` on your API.
-  - Services: `src/services/api.ts` (fetch) and `src/services/api.axios.ts` (axios)
+  - Services: `src/services/http.ts` (axios client) and fetch helpers
   - Hooks: `src/hooks/useDestinationsCrud*.ts`
-  - UI pages under `src/pages/requests/*/crud/*`
+  - UI pages under `src/pages/data/http/*/crud/*`
 
 ## SessionStorage (Client Storage)
-- Read-only examples under `src/pages/requests/sessionstorage/juststorage/*`:
+- Read-only examples under `src/pages/data/clientstorage/sessionstorage/juststorage/*`:
   - Easy and Typed pages mirror "fetch justfetch" but read-only (no create/edit/delete).
   - Hook variant (`StorageHook`) shows a refresh of client data.
-- Full CRUD examples under `src/pages/requests/sessionstorage/crud/*`:
+- Full CRUD examples under `src/pages/data/clientstorage/sessionstorage/crud/*`:
   - Easy, Hook, Typed, RHF, Zod, and RHF + Zod variants using `src/services/sessionStorage.ts` and `src/hooks/useDestinationsSessionStorage.ts`.
   - Zod/RHF variants validate inputs using `src/schemas/destination.ts`.
   - All tests seed `sessionStorage` per-spec and assert visible flows.
+ - Routes
+   - `/session-juststorage-easy`
+   - `/session-juststorage-hook`
+   - `/session-juststorage-typed`
+   - `/session-crud-easy`
+   - `/session-crud-hook`
+   - `/session-crud-typed`
+   - `/session-crud-rhf-easy`
+   - `/session-crud-rhf-zod`
 
 ## LocalStorage (Client Storage)
-- Juststorage examples under `src/pages/requests/localstorage/juststorage/*`:
+- Juststorage examples under `src/pages/data/clientstorage/localstorage/juststorage/*`:
   - `StorageEasy` and `StorageTyped` are minimal local demos that support create (no edit/delete yet).
   - `StorageHook` shows client-side refresh using `useDestinationsLocalStorage`.
   - Uses `src/services/localStorage.ts` helpers and/or `src/hooks/useDestinationsLocalStorage.ts`.
-- Full CRUD examples under `src/pages/requests/localstorage/crud/*`:
+- Full CRUD examples under `src/pages/data/clientstorage/localstorage/crud/*`:
   - Implemented variants: Easy, Hook, Typed, Zod, RHF Easy, and RHF + Zod.
   - All use `src/services/localStorage.ts`; hook-driven pages use `src/hooks/useDestinationsLocalStorage.ts`.
   - Zod/RHF variants validate inputs with `src/schemas/destination.ts`.
@@ -155,14 +167,19 @@ src/
 - Use feature-scoped commits to keep history clean:
   - `basic: add module README (layout, ui, barrels)`
   - `props: add lessons README`
-  - `requests: add CRUD examples with hooks`
+  - `data: add CRUD examples with hooks`
 - Prefer branches per feature: `feature/<name>` then PR.
 
 ## Useful Docs
 - `src/modules/basic/README.md` — layout/UI props and usage
 - `src/pages/basic/easy/props/README.md` — props lessons
-- `src/pages/requests/README.md` — fetch/axios/sessionStorage overview, env flags, mocking
+- Data pages overview — see `src/pages/data/http/*` and `src/pages/data/clientstorage/*`
 - `docs/TESTING.md` — testing setup and examples
+
+## TypeScript Migration Notes
+- All JSX components under `src/components` are now `.tsx`.
+- Imports use extensionless paths; `.tsx` endings are removed to avoid `allowImportingTsExtensions`.
+- Routes and page imports have been updated to the new `src/pages/data/*` modules for HTTP and client storage examples.
 
 ## Tech Stack
 - `react` + `vite` + `@vitejs/plugin-react`
