@@ -56,6 +56,7 @@ import RhfEasyLocal from "@/pages/data/clientstorage/localstorage/crud/RhfEasyLo
 import RhfZodLocal from "@/pages/data/clientstorage/localstorage/crud/RhfZodLocal";
 import ThemeBasic from "@/pages/data/clientstorage/localstorage/basic/ThemeBasic";
 import CartSnapshotBasic from "@/pages/data/clientstorage/localstorage/basic/CartSnapshotBasic";
+import CartSnapshotPro from "@/pages/data/clientstorage/localstorage/pro/CartSnapshotPro";
 import CrudEasySession from "@/pages/data/clientstorage/sessionstorage/crud/CrudEasySession";
 import CrudHookSession from "@/pages/data/clientstorage/sessionstorage/crud/CrudHookSession";
 import CrudTypedSession from "@/pages/data/clientstorage/sessionstorage/crud/CrudTypedSession";
@@ -126,6 +127,7 @@ createRoot(rootEl).render(
         <Route path="/local-crud-rhf-zod" element={<RhfZodLocal />} />
         <Route path="/local-basic-theme" element={<ThemeBasic />} />
         <Route path="/local-basic-cart" element={<CartSnapshotBasic />} />
+        <Route path="/local-pro-cart" element={<CartSnapshotPro />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
