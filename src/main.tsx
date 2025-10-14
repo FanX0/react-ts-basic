@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
 import "@/index.css";
 import App from "@/App";
-import Tabs from "@/components/tabs/Tabs.jsx";
+import Tabs from "@/components/tabs/Tabs";
 import BasicIndex from "@/pages/basic/BasicIndex.tsx";
 import ComponentEasy from "@/pages/basic/easy/ComponentEasy.tsx";
 import StateEasy from "@/pages/basic/easy/StateEasy.tsx";
