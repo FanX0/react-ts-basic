@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
 import "@/index.css";
-import App from "@/App.jsx";
+import App from "@/App";
 import Tabs from "@/components/tabs/Tabs.jsx";
 import BasicIndex from "@/pages/basic/BasicIndex.tsx";
 import ComponentEasy from "@/pages/basic/easy/ComponentEasy.tsx";
@@ -60,7 +60,8 @@ import CrudTypedSession from "@/pages/requests/sessionstorage/crud/CrudTypedSess
 import RhfEasySession from "@/pages/requests/sessionstorage/crud/RhfEasySession.tsx";
 import RhfZodSession from "@/pages/requests/sessionstorage/crud/RhfZodSession.tsx";
 
-createRoot(document.getElementById("root")).render(
+const rootEl = document.getElementById("root")!;
+createRoot(rootEl).render(
   <StrictMode>
     <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>

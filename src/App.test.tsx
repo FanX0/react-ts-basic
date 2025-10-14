@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { MemoryRouter } from 'react-router';
-import App from '@/App.jsx';
+import App from '@/App.js';
 
 describe('App navigation', () => {
   beforeEach(() => {
