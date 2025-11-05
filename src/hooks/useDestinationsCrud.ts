@@ -7,10 +7,12 @@ export function useDestinationsCrud() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const refresh = useCallback(async () => {
+  const refresh = useCallback(async (preserveError = false) => {
     try {
       setLoading(true);
-      setError(null);
+      if (!preserveError) {
+        setError(null);
+      }
       const data = await listDestinations();
       setItems(data);
     } catch (e) {
@@ -35,7 +37,7 @@ export function useDestinationsCrud() {
       const msg = e instanceof Error ? e.message : String(e);
       setError(msg);
       // Some environments may persist data despite a 500 during file write; resync.
-      await refresh();
+      await refresh(true);
     } finally {
       setLoading(false);
     }
@@ -50,7 +52,7 @@ export function useDestinationsCrud() {
     } catch (e) {
       const msg = e instanceof Error ? e.message : String(e);
       setError(msg);
-      await refresh();
+      await refresh(true);
     } finally {
       setLoading(false);
     }
@@ -65,7 +67,7 @@ export function useDestinationsCrud() {
     } catch (e) {
       const msg = e instanceof Error ? e.message : String(e);
       setError(msg);
-      await refresh();
+      await refresh(true);
     } finally {
       setLoading(false);
     }

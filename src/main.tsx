@@ -54,9 +54,10 @@ import CrudTypedLocal from "@/pages/data/clientstorage/localstorage/crud/CrudTyp
 import CrudZodLocal from "@/pages/data/clientstorage/localstorage/crud/CrudZodLocal";
 import RhfEasyLocal from "@/pages/data/clientstorage/localstorage/crud/RhfEasyLocal";
 import RhfZodLocal from "@/pages/data/clientstorage/localstorage/crud/RhfZodLocal";
-import ThemeBasic from "@/pages/data/clientstorage/localstorage/basic/ThemeBasic";
-import CartSnapshotBasic from "@/pages/data/clientstorage/localstorage/basic/CartSnapshotBasic";
-import CartSnapshotPro from "@/pages/data/clientstorage/localstorage/pro/CartSnapshotPro";
+import ThemeBasic from "@/pages/data/clientstorage/localstorage/basic/Theme/ThemeBasic";
+import CartEasy from "@/pages/data/clientstorage/localstorage/basic/cart/CartEasy";
+import CartPro from "@/pages/data/clientstorage/localstorage/basic/cart/CartPro";
+import CartProPrice from "@/pages/data/clientstorage/localstorage/basic/cart/CartProPrice";
 import CrudEasySession from "@/pages/data/clientstorage/sessionstorage/crud/CrudEasySession";
 import CrudHookSession from "@/pages/data/clientstorage/sessionstorage/crud/CrudHookSession";
 import CrudTypedSession from "@/pages/data/clientstorage/sessionstorage/crud/CrudTypedSession";
@@ -75,7 +76,10 @@ createRoot(rootEl).render(
         <Route path="/basic/state" element={<StateEasy />} />
         <Route path="/basic/props" element={<PropsEasyIndex />} />
         <Route path="/basic/props/basic" element={<PropsEasy />} />
-        <Route path="/basic/props/destructuring" element={<PropsDestructuring />} />
+        <Route
+          path="/basic/props/destructuring"
+          element={<PropsDestructuring />}
+        />
         <Route path="/basic/props/spread" element={<PropsSpreadSyntax />} />
         <Route path="/basic/props/children" element={<PropsChildren />} />
         <Route path="/basic/props/conditional" element={<PropsConditional />} />
@@ -85,8 +89,14 @@ createRoot(rootEl).render(
         <Route path="/basic/forms" element={<FormEasy />} />
         <Route path="/basic/context" element={<ContextIntermediate />} />
         <Route path="/basic/reducer" element={<ReducerIntermediate />} />
-        <Route path="/basic/memoization" element={<MemoizationIntermediate />} />
-        <Route path="/basic/custom-hooks" element={<CustomHooksIntermediate />} />
+        <Route
+          path="/basic/memoization"
+          element={<MemoizationIntermediate />}
+        />
+        <Route
+          path="/basic/custom-hooks"
+          element={<CustomHooksIntermediate />}
+        />
         <Route path="/basic/performance" element={<PerformancePro />} />
         <Route path="/basic/patterns" element={<PatternsPro />} />
         <Route path="/fetch-basic" element={<FetchEasy />} />
@@ -118,7 +128,10 @@ createRoot(rootEl).render(
         <Route path="/session-crud-rhf-zod" element={<RhfZodSession />} />
         <Route path="/local-juststorage-easy" element={<LocalStorageEasy />} />
         <Route path="/local-juststorage-hook" element={<LocalStorageHook />} />
-        <Route path="/local-juststorage-typed" element={<LocalStorageTyped />} />
+        <Route
+          path="/local-juststorage-typed"
+          element={<LocalStorageTyped />}
+        />
         <Route path="/local-crud-easy" element={<CrudEasyLocal />} />
         <Route path="/local-crud-hook" element={<CrudHookLocal />} />
         <Route path="/local-crud-typed" element={<CrudTypedLocal />} />
@@ -126,8 +139,9 @@ createRoot(rootEl).render(
         <Route path="/local-crud-rhf-easy" element={<RhfEasyLocal />} />
         <Route path="/local-crud-rhf-zod" element={<RhfZodLocal />} />
         <Route path="/local-basic-theme" element={<ThemeBasic />} />
-        <Route path="/local-basic-cart" element={<CartSnapshotBasic />} />
-        <Route path="/local-pro-cart" element={<CartSnapshotPro />} />
+        <Route path="/local-basic-cart-easy" element={<CartEasy />} />
+        <Route path="/local-basic-cart-pro" element={<CartPro />} />
+        <Route path="/local-basic-cart-pro-price" element={<CartProPrice />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

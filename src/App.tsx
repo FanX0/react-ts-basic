@@ -8,11 +8,10 @@ function App() {
       <Header />
       <Home />
       <nav style={{ display: "grid", gap: "0.5rem", padding: "1rem" }}>
-       
         <hr />
         <Link to="/basic">Basic Index</Link>
-        <hr/>
-         <Link to="/fetch-basic">Fetch Easy</Link>
+        <hr />
+        <Link to="/fetch-basic">Fetch Easy</Link>
         <Link to="/fetch-typed">Fetch Typed</Link>
         <Link to="/fetch-hook">Fetch Hook</Link>
         <Link to="/fetch-crud-basic">CRUD Basic</Link>
@@ -42,8 +41,12 @@ function App() {
         <Link to="/local-crud-zod">LocalStorage CRUD Zod</Link>
         <Link to="/local-crud-rhf-easy">LocalStorage CRUD RHF Easy</Link>
         <Link to="/local-crud-rhf-zod">LocalStorage CRUD RHF + Zod</Link>
-        <Link to="/local-basic-theme">Theme Basic</Link>
-        <Link to="/local-basic-cart">Cart Snapshot Basic</Link>
+        <Link to="/local-basic-theme">LocalStorage Theme Basic</Link>
+        <Link to="/local-basic-cart-easy">LocalStorage Cart Easy</Link>
+        <Link to="/local-basic-cart-pro">LocalStorage Cart Pro</Link>
+        <Link to="/local-basic-cart-pro-price">
+          LocalStorage Cart Pro Price
+        </Link>
         <hr />
         <Link to="/session-juststorage-easy">SessionStorage Easy</Link>
         <Link to="/session-juststorage-typed">SessionStorage Typed</Link>
