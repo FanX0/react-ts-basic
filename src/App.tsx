@@ -44,8 +44,16 @@ function App() {
         <Link to="/local-basic-theme">LocalStorage Theme Basic</Link>
         <Link to="/local-basic-cart-easy">LocalStorage Cart Easy</Link>
         <Link to="/local-basic-cart-pro">LocalStorage Cart Pro</Link>
+        <Link to="/local-basic-score">LocalStorage Score Basic</Link>
         <Link to="/local-basic-cart-pro-price">
           LocalStorage Cart Pro Price
+        </Link>
+        <Link to="/local-basic-comment">LocalStorage Comment Basic</Link>
+        <Link to="/local-basic-comment-replay">
+          LocalStorage Comment Replay
+        </Link>
+        <Link to="/local-basic-comment-replay-score-pro">
+          LocalStorage Comment Replay Score Pro
         </Link>
         <hr />
         <Link to="/session-juststorage-easy">SessionStorage Easy</Link>

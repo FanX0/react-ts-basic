@@ -63,6 +63,10 @@ import CrudHookSession from "@/pages/data/clientstorage/sessionstorage/crud/Crud
 import CrudTypedSession from "@/pages/data/clientstorage/sessionstorage/crud/CrudTypedSession";
 import RhfEasySession from "@/pages/data/clientstorage/sessionstorage/crud/RhfEasySession";
 import RhfZodSession from "@/pages/data/clientstorage/sessionstorage/crud/RhfZodSession";
+import ComentBasic from "./pages/data/clientstorage/localstorage/basic/comment/ComentBasic";
+import ScoreBasic from "./pages/data/clientstorage/localstorage/basic/comment/ScoreBasic";
+import ComentReplayAdvanced from "./pages/data/clientstorage/localstorage/basic/comment/ComentReplayAdvanced";
+import ComentReplayScorePro from "./pages/data/clientstorage/localstorage/basic/comment/ComentReplayScorePro";
 
 const rootEl = document.getElementById("root")!;
 createRoot(rootEl).render(
@@ -142,6 +146,16 @@ createRoot(rootEl).render(
         <Route path="/local-basic-cart-easy" element={<CartEasy />} />
         <Route path="/local-basic-cart-pro" element={<CartPro />} />
         <Route path="/local-basic-cart-pro-price" element={<CartProPrice />} />
+        <Route path="/local-basic-score" element={<ScoreBasic />} />
+        <Route path="/local-basic-comment" element={<ComentBasic />} />
+        <Route
+          path="/local-basic-comment-replay"
+          element={<ComentReplayAdvanced />}
+        />
+        <Route
+          path="/local-basic-comment-replay-score-pro"
+          element={<ComentReplayScorePro />}
+        />
       </Routes>
     </BrowserRouter>
   </StrictMode>
